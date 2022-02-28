@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './style.css'
+import { KeyBoard } from './KeyBoard'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+  return (
+    <div style={{ height: '100%', background: '#eee' }}>
+      <KeyBoard
+        title="C 大调"
+        keyNums={61}
+        pressedKeys={['[0]', '[4]', '[7]']}
+      />
+      <KeyBoard
+        title="C 小调"
+        keyNums={61}
+        pressedKeys={['[0]', '[3]', '[7]']}
+      />
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.getElementById('root'));
