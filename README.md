@@ -10,3 +10,6 @@ npm start
 # 编译项目
 npm run build
 ```
+
+## 配置方式
+见 index.js
