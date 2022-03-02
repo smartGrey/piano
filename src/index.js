@@ -10,7 +10,7 @@ function App() {
   const menuWidth = 260;
   const [selectedKeys, setSelectedKeys] = useState([]);
   const [dataSource, setDataSource] = useState({});
-  const [keyboardTreeSelectHeight, setKeyboardTreeSelectHeight] = useState(30);
+  const [keyboardTreeSelectHeight, setKeyboardTreeSelectHeight] = useState(32);
   useEffect(() => {
     const results = {};
     Object.keys(keyboardsConfig).forEach(groupName => {
@@ -43,7 +43,7 @@ function App() {
           treeCheckable={true}
           treeCheckStrictly={false}
           treeCheckedStrategy={TreeSelect.SHOW_PARENT}
-          bordered={false}
+          // bordered={false} // 输入框蓝色边框
           popupVisible={true}
           placeholder="勾选以显示内容"
           allowClear={true}
