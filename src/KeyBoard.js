@@ -57,27 +57,30 @@ export const Key = ({
 
 // keyNums: >0
 // pressedKeys: 0-11[]
-export const KeyBoard = ({ title, keyNums = 37, pressedKeys = [], style = {} }) => (
-  <div style={{ ...style }}>
+export const KeyBoard = ({ title, keyNums = 37, pressedKeys = [], style = {} }) => {
+  pressedKeys.forEach((item, i) => pressedKeys[i]=String(item))
+  return (
     <div
       style={{
         display: 'inline-block',
         background: 'grey',
         fontSize: 0,
         boxShadow: '1px 1px 3px 3px #aaa',
-        margin: 20,
         userSelect: 'none',
+        border: '1px solid #777',
+        whiteSpace: 'nowrap',
+        ...style,
       }}
     >
-      {title && <div style={{ fontSize: 22, lineHeight: 1.6, textAlign: 'center', background: '#fff' }}>{title}</div>}
+      {title && <div style={{ fontSize: 20, lineHeight: 1.6, textAlign: 'center', background: '#111', color: '#bbb', fontWeight: 'bold' }}>{title}</div>}
       {
         new Array(keyNums).fill(0).map((_, i) => (
           <Key
             key={i} index={i % 12}
-            pressed={(pressedKeys.indexOf(i) !== -1) || (pressedKeys.indexOf(`[${i % 12}]`) !== -1)}
+            pressed={(pressedKeys.indexOf(`${i}`) !== -1) || (pressedKeys.indexOf(`[${i % 12}]`) !== -1)}
           />
         ))
       }
     </div>
-  </div>
-);
+  )
+};
