@@ -8,7 +8,7 @@ import "@arco-design/web-react/dist/css/arco.css";
 
 function App() {
   const menuWidth = 260;
-  const [selectedKeys, setSelectedKeys] = useState([]);
+  const [selectedKeys, setSelectedKeys] = useState(Object.keys(keyboardsConfig).map(groupName => groupName));
   const [dataSource, setDataSource] = useState({});
   const [keyboardTreeSelectHeight, setKeyboardTreeSelectHeight] = useState(32);
   useEffect(() => {
@@ -99,6 +99,7 @@ function App() {
                 key={j}
                 title={keyboard.title}
                 pressedKeys={keyboard.pattern}
+                keyNum={keyboard.keyNum || 24}
               />
             )}
           />
