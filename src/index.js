@@ -86,7 +86,7 @@ function App() {
         {Object.keys(dataSource).map((groupName, i) => (
           <List
             key={i}
-            grid={{ xs: 24, sm: 24, md: 24, lg: 24, xl: 12, xxl: 8 }}
+            grid={{ xs: 24, sm: 24, md: 24, lg: 24, xl: 12, xxl: 12 }}
             header={<span style={{ fontSize: 22, fontWeight: 'bold' }}>{groupName}</span>}
             wrapperStyle={{ marginBottom: 20, paddingBottom: 10, boxShadow: '0 0 2px 2px #aaa' }}
             style={{ textAlign: 'center' }}
